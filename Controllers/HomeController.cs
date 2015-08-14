@@ -17,7 +17,7 @@ namespace wb.Controllers
 
         public ActionResult Register()
         {
-            return View("Register");
+            return View();
         }
         [HttpPost]
         public ActionResult registerAction(string regUser, string regPass, string regPassConfirm,string regEmail, bool regAgree)
@@ -27,12 +27,12 @@ namespace wb.Controllers
             ViewData["regPassConfirm"] = regPassConfirm;
             ViewData["regEmail"] = regEmail;
             ViewData["regAgree"] = regAgree;
-            return View("Register");
+            return View("Index");
         }
 
         public ActionResult Contact()
         {
-            return View("Contact");
+            return View();
         }
     }
 }
