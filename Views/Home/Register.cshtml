@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<div id='regContainer'>
+    <div id='regLeft'>
+        </br></br></br></br></br>
+        Register for an account</br>
+        to start using Writer's Block.</br>
+        It's time to start writing.</br>
+    </div>
+    <div id='regRight'>
+        <form id='register' method='POST' action='/registerAction'>
+            Pseudonym: <div style='font-size: 12px'>This is your pen name.(Alphanumeric characters only)</div><input type='text' name='regUser'></br>
+            Password: <div style='font-size: 12px'>This is your password to log in.</div><input type='password' name='regPass'></br>
+            Confirm Password: <div style='font-size: 12px'>Please re-enter your password.</div><input type='password' name='regPassConfirm'></br>
+            Email(optional): <div style='font-size: 12px'>Please enter an e-mail to contact you with.</div><input type='input' name='regEmail'></br>
+            </br><input type='checkbox' name='regAgree' value='true'>I agree to <a href='http://127.0.0.1/terms'>terms and agreements</a>.
+            </br><input type='Submit' name='regSubmit' value='Register' style='float: right;'>
+            <!--put captcha here-->
+        </form>
+    </div>
+</div>
+

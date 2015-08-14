@@ -1,0 +1,121 @@
+﻿/*	header	*/
+a#backgroundLink{
+position: absolute; 
+width: 15%;
+height: 5%;
+background-color: transparent;
+}
+div#background{
+width: 100%;
+padding-top: .75%;
+padding-bottom: .25%;
+background-color: #D7FFD7;
+}
+div#top{
+padding-top: .05%;
+clear:both;
+}
+form#login{
+font-size: 13px;
+padding-right: 2.5%;
+}
+input#loginText {
+width: 95px;
+height: 12px;
+font-size: 13px;
+}
+div#loginRem{
+float: right;
+margin-right: 30%;
+}
+input#loginSub {
+width: 75px;
+font-size: 13px;
+margin-right: 10px;
+}
+div#loginTop{
+float: right;
+width: 25%;
+}
+div#profileTop{
+float: right;
+margin-right: 1%;
+padding-top: .325%;
+}
+input#logoutSub{
+background: transparent;
+border: none;
+color: #0645AD;
+cursor: pointer;
+font-size: 14px;
+font-family: Times New Roman;
+}
+a
+{text-decoration: none;}
+a:visited  
+{color:#1004E7; }
+form#search{
+padding-right: 1.5%;
+padding-top: 1.5%;
+float: right;
+}
+input#searchBar {
+width: 250px;
+}
+div#links{
+clear: both;
+margin-left: auto;
+margin-right: auto;
+}
+a#topLinks{
+padding-left: .925%;
+padding-right: .925%;
+margin-left: 1.5%;
+margin-right: 1.5%;
+}
+div#moreBox{
+float: right;
+padding-right: 3.5%;
+color:#0645AD; 
+}
+
+/*	register	*/
+div#regError{
+clear: both;
+margin-left: auto;
+margin-right: auto;
+width: 55%;
+padding-top: 2.5%;
+vertical-align: top;
+}
+div#regContainer{
+clear: both;
+margin-left: auto;
+margin-right: auto;
+padding-top: 1.5%;
+vertical-align: top;
+width: 25%;
+}
+div#regLeft{
+float: left;
+padding-right: 1.5%;
+}
+div#regRight{
+float: right;
+padding-left: 1.5%;
+}
+
+/* footer */
+div#bottomLinksContainer{
+clear: both;
+margin-left: auto;
+margin-right: auto;
+width: 35%;
+padding-top: 5%;
+}
+a#bottomLinks{
+padding-left: 1%;
+padding-right: 1%;
+margin-left: 2%;
+margin-right: 2%;
+}

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Writer's Block</title>
+    <link href="~/Content/Site.css" rel="stylesheet"/>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <a id='backgroundLink' href='/'></a>
+    <!--Header and login-->
+    <div id='background'>
+        <div id='loginTop'>
+            <form id='login' method='POST' action=''>
+                Pseudonym: <input type='text' name='loginUser' id='loginText'>
+                Password: <input type='password' name='loginPass' id='loginText'>
+                <input type='Submit' name='loginSubmit' value='Login' id='loginSub'>
+                <a href='/register'>Register</a>
+                </br><div id='loginRem'><input type='checkbox' name='loginRem' value='true'>Remember me</div>
+            </form>
+        </div>
+        <div id='top'>
+            @{ string[] topics = new string[] { "Fantasy", "Fan-fiction", "Mystery", "Thriller", "Horror", "Drama", "Romance", "Poetry", "Short Stories", "Constrained Writing", "Art-Related" }; }
+            @{ string[] links = new string[] { "fantasy", "fan-fiction", "mystery", "thriller", "horror", "drama", "romance", "poetry", "short-stories", "constrained-writing", "art-related" }; }
+            @for (int x = 0; x < topics.Length; x++)
+            {
+                <a id='topLinks' href='@links[x]'>@topics[x]</a>
+            }
+            <div id='moreBox'>More ▼</div>
+        </div>
+    </div>
+    <div id='searhBar'>
+        <form id='search' method='GET' action='search'>
+            <input type='text' name='searchBar' id='searchBar'>
+            <input type='Submit' name='searchSub' value='Search' id='searchSub'>
+        </form>
+    </div>
+    @RenderBody()
+    <!-- Footer -->
+    <div id='bottomLinksContainer'>
+        @{ string[] list = new string[] { "Contact Us", "About", "Site Rules", "FAQ", "Dev Blog", "Terms and Agreements" }; }
+        @{ string[] footerLinks = new string[] { "contact", "about", "rules", "faq", "blog", "terms" }; }
+        @for (int x = 0; x < list.Length; x++)
+        { 
+            <a id='bottomLinks' href='@footerLinks[x]'>@list[x]</a>
+        }
+    </div>
+</body>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+</html>
