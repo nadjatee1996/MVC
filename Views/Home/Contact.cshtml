@@ -1,7 +1,12 @@
-﻿
+﻿@model wb.Models.Feedback
 @{
     ViewBag.Title = "Contact";
 }
 
-<h2>Contact</h2>
+@using (Html.BeginForm("contact", "Home", FormMethod.Post, new { id = "contactForm"}))
+{
+    <span>Comments? Feedback? Just want someone to talk to? Send us a message!</span>
+    @Html.TextAreaFor(model => model.feedback, new { cols = 60, rows = 25})
+    <input type='Submit' name='contactSubmit' id='contactSubmit'>
+}
 

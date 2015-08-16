@@ -27,7 +27,13 @@ namespace wb.Controllers
             ViewData["regPassConfirm"] = regPassConfirm;
             ViewData["regEmail"] = regEmail;
             ViewData["regAgree"] = regAgree;
-            return View("Index");
+            return View("Register");
+        }
+        [HttpPost]
+        public ActionResult contactAction(string feedback)
+        {
+            ViewData["feedback"] = feedback;
+            return View("Contact");
         }
 
         public ActionResult Contact()

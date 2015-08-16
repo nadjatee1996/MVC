@@ -21,7 +21,12 @@ namespace wb
             routes.MapRoute(
                 name: "register",
                 url: "register",
-                defaults: new { controller = "home", action = "Register", id = UrlParameter.Optional }
+                defaults: new { controller = "home", action = "Register" }
+            );
+            routes.MapRoute(
+                name: "contact",
+                url: "contact",
+                defaults: new { controller = "home", action = "Contact" }
             );
             /*
             routes.MapRoute(
