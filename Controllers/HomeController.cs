@@ -35,7 +35,14 @@ namespace wb.Controllers
             ViewData["feedback"] = feedback;
             return View("Contact");
         }
-
+        [HttpPost]
+        public ActionResult Login(string username,string password, bool remember)
+        {
+            ViewData["username"] = username;
+            ViewData["password"] = password;
+            ViewData["remember"] = remember;
+            return View("Index");
+        }
         public ActionResult Contact()
         {
             return View();

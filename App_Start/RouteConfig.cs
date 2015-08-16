@@ -28,6 +28,11 @@ namespace wb
                 url: "contact",
                 defaults: new { controller = "home", action = "Contact" }
             );
+            routes.MapRoute(
+                name: "login",
+                url: "login",
+                defaults: new { controller = "home", action = "Login" }
+            );
             /*
             routes.MapRoute(
                 name: "topics",

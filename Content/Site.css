@@ -24,9 +24,13 @@ width: 95px;
 height: 12px;
 font-size: 13px;
 }
+span#loginText {
+font-size: 13px;
+}
 div#loginRem{
 float: right;
 margin-right: 30%;
+font-size: 13px;
 }
 input#loginSub {
 width: 75px;

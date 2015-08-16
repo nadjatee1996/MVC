@@ -3,7 +3,7 @@
     ViewBag.Title = "Contact";
 }
 
-@using (Html.BeginForm("contact", "Home", FormMethod.Post, new { id = "contactForm"}))
+@using (Html.BeginForm("contact", "Home", FormMethod.Post, new { @id = "contactForm"}))
 {
     <span>Comments? Feedback? Just want someone to talk to? Send us a message!</span>
     @Html.TextAreaFor(model => model.feedback, new { cols = 60, rows = 25})

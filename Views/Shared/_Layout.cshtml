@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model wb.Models.User
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -12,13 +13,13 @@
     <!--Header and login-->
     <div id='background'>
         <div id='loginTop'>
-            <form id='login' method='POST' action=''>
-                Pseudonym: <input type='text' name='loginUser' id='loginText'>
-                Password: <input type='password' name='loginPass' id='loginText'>
-                <input type='Submit' name='loginSubmit' value='Login' id='loginSub'>
-                <a href='/register'>Register</a>
-                </br><div id='loginRem'><input type='checkbox' name='loginRem' value='true'>Remember me</div>
-            </form>
+        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+        {
+            <span id="loginText">Pseudonym: </span>@Html.TextBoxFor(model => model.username, new { id = "loginText" })
+            <span id="loginText">Password: </span>@Html.TextBoxFor(model => model.password, new { id = "loginText" })
+            <input type='Submit' name='loginSubmit' value='Login' id='loginSub'>
+            <div id='loginRem'><input type='checkbox' name='loginRem' value='true'>Remember me</div>
+        }
         </div>
         <div id='top'>
             @{ string[] topics = new string[] { "Fantasy", "Fan-fiction", "Mystery", "Thriller", "Horror", "Drama", "Romance", "Poetry", "Short Stories", "Constrained Writing", "Art-Related" }; }
