@@ -18,9 +18,10 @@
             <span id="loginText">Pseudonym: </span>@Html.TextBoxFor(model => model.username, new { id = "loginText" })
             <span id="loginText">Password: </span>@Html.TextBoxFor(model => model.password, new { id = "loginText" })
             <input type='Submit' name='loginSubmit' value='Login' id='loginSub'>
-            <div id='loginRem'><input type='checkbox' name='loginRem' value='true'>Remember me</div>
-        }
-        </div>
+            <span id="loginText"><a href='/register'>Register</a></span>
+                <div id='loginRem'><input type='checkbox' name='loginRem' value='true'>Remember me</div>
+                }
+</div>
         <div id='top'>
             @{ string[] topics = new string[] { "Fantasy", "Fan-fiction", "Mystery", "Thriller", "Horror", "Drama", "Romance", "Poetry", "Short Stories", "Constrained Writing", "Art-Related" }; }
             @{ string[] links = new string[] { "fantasy", "fan-fiction", "mystery", "thriller", "horror", "drama", "romance", "poetry", "short-stories", "constrained-writing", "art-related" }; }

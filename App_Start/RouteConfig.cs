@@ -33,7 +33,7 @@ namespace wb
                 url: "login",
                 defaults: new { controller = "home", action = "Login" }
             );
-            /*
+            
             routes.MapRoute(
                 name: "topics",
                 url: "{id}",
@@ -43,7 +43,7 @@ namespace wb
                 name: "threads",
                 url: "{thread}/{id}",
                 defaults: new { controller = "thread", action = "Index", id = UrlParameter.Optional }
-            );*/
+            );
 
         }
     }
