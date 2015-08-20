@@ -12,15 +12,18 @@ namespace wb.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class user
+    public partial class thread
     {
-        public int u_id { get; set; }
-        public string regIP { get; set; }
-        public string loginIP { get; set; }
-        public string pseudonym { get; set; }
-        public string password { get; set; }
-        public string email { get; set; }
-        public int userlvl { get; set; }
-        public int posts { get; set; }
+        public int t_id { get; set; }
+        public int a_id { get; set; }
+        public string topic { get; set; }
+        public string active { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+        public int approve { get; set; }
+        public int disapprove { get; set; }
+        public System.DateTime created { get; set; }
+        public string identifier { get; set; }
+        public int attributes { get; set; }
     }
 }

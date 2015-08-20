@@ -12,15 +12,10 @@ namespace wb.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class user
+    public partial class error
     {
-        public int u_id { get; set; }
-        public string regIP { get; set; }
-        public string loginIP { get; set; }
-        public string pseudonym { get; set; }
-        public string password { get; set; }
-        public string email { get; set; }
-        public int userlvl { get; set; }
-        public int posts { get; set; }
+        public int e_id { get; set; }
+        public string error1 { get; set; }
+        public System.DateTime time { get; set; }
     }
 }
