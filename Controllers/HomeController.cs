@@ -20,7 +20,7 @@ namespace wb.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult registerAction(string regUser, string regPass, string regPassConfirm,string regEmail, bool regAgree)
+        public ActionResult Register(string regUser, string regPass, string regPassConfirm,string regEmail, bool regAgree)
         {
             ViewData["regUser"] = regUser;
             ViewData["regPass"] = regPass;
@@ -29,8 +29,13 @@ namespace wb.Controllers
             ViewData["regAgree"] = regAgree;
             return View("Register");
         }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
         [HttpPost]
-        public ActionResult contactAction(string feedback)
+        public ActionResult Contact(string feedback)
         {
             ViewData["feedback"] = feedback;
             return View("Contact");
@@ -42,10 +47,6 @@ namespace wb.Controllers
             ViewData["password"] = password;
             ViewData["remember"] = remember;
             return View("Index");
-        }
-        public ActionResult Contact()
-        {
-            return View();
         }
     }
 }

@@ -31,3 +31,7 @@ D:\MVC\wb\wb\bin\System.Web.Mvc.xml
 D:\MVC\wb\wb\obj\Debug\wb.csprojResolveAssemblyReference.cache
 D:\MVC\wb\wb\obj\Debug\wb.dll
 D:\MVC\wb\wb\obj\Debug\wb.pdb
+D:\MVC\wb\wb\bin\EntityFramework.dll
+D:\MVC\wb\wb\bin\EntityFramework.SqlServer.dll
+D:\MVC\wb\wb\bin\EntityFramework.xml
+D:\MVC\wb\wb\bin\EntityFramework.SqlServer.xml

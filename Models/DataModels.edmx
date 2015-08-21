@@ -252,7 +252,7 @@
           <Property Name="userlvl" Type="Int32" Nullable="false" />
           <Property Name="posts" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="wbDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="wbDBEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="active_threads" EntityType="Self.active_threads" />
           <EntitySet Name="comments" EntityType="Self.comment" />
           <EntitySet Name="errors" EntityType="Self.error" />
@@ -269,7 +269,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="wbDBModelStoreContainer" CdmEntityContainer="wbDBEntities">
+        <EntityContainerMapping StorageEntityContainer="wbDBModelStoreContainer" CdmEntityContainer="wbDBEntities1">
           <EntitySetMapping Name="active_threads">
             <EntityTypeMapping TypeName="wbDBModel.active_threads">
               <MappingFragment StoreEntitySet="active_threads">

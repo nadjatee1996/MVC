@@ -1,4 +1,4 @@
-﻿@model wb.Models.User
+﻿@model wb.Models.user
 @{
     ViewBag.Title = "Register";
 }
@@ -13,9 +13,9 @@
     <div id="regRight">
         @using (Html.BeginForm("Register", "Home",FormMethod.Post))
         {
-            <span>Pseudonym: </span><div style="font-size: 12px">This is your pen name.(Alphanumeric characters only)</div>@Html.TextBoxFor(model => model.username)
+            <span>Pseudonym: </span><div style="font-size: 12px">This is your pen name.(Alphanumeric characters only)</div>@Html.TextBoxFor(model => model.pseudonym)
             <span>Password: </span><div style="font-size: 12px">This is your password to log in.</div>@Html.TextBoxFor(model => model.password)
-            <span>Confirm Password: </span><div style="font-size: 12px">Please re-enter your password.</div>@Html.TextBoxFor(model => model.passwordConfirm)
+            <span>Confirm Password: </span><div style="font-size: 12px">Please re-enter your password.</div>@Html.TextBoxFor(model => model.password)
             <span>Email(optional): </span><div style="font-size: 12px">Please enter an e-mail to contact you with.</div>@Html.TextBoxFor(model => model.email)
             @Html.CheckBoxFor(model => model.agree)<div>I agree to <a href="/terms">terms and agreements</a></div>
             <input type="submit" value="Register" />

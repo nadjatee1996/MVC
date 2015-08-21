@@ -22,5 +22,6 @@ namespace wb.Models
         public string email { get; set; }
         public int userlvl { get; set; }
         public int posts { get; set; }
+        public bool agree { get; set; }
     }
 }

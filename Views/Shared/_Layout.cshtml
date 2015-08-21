@@ -1,4 +1,4 @@
-﻿@model wb.Models.User
+﻿@model wb.Models.user
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +15,7 @@
         <div id='loginTop'>
         @using (Html.BeginForm("Login", "Home", FormMethod.Post))
         {
-            <span id="loginText">Pseudonym: </span>@Html.TextBoxFor(model => model.username, new { id = "loginText" })
+            <span id="loginText">Pseudonym: </span>@Html.TextBoxFor(model => model.pseudonym, new { id = "loginText" })
             <span id="loginText">Password: </span>@Html.TextBoxFor(model => model.password, new { id = "loginText" })
             <input type='Submit' name='loginSubmit' value='Login' id='loginSub'>
             <span id="loginText"><a href='/register'>Register</a></span>
