@@ -19,7 +19,6 @@ namespace wb.Models
         public string loginIP { get; set; }
         public string pseudonym { get; set; }
         public string password { get; set; }
-        public string email { get; set; }
         public int userlvl { get; set; }
         public int posts { get; set; }
         public bool agree { get; set; }
