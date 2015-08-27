@@ -12,7 +12,7 @@ namespace wb.Controllers
 {
     public class usersController : Controller
     {
-        private wbDBEntities1 db = new wbDBEntities1();
+        private wbEntities db = new wbEntities();
 
         // GET: users
         public ActionResult Index()

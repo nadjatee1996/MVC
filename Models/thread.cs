@@ -14,8 +14,16 @@ namespace wb.Models
     
     public partial class thread
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public thread()
+        {
+            this.active_threads = new HashSet<active_threads>();
+            this.posts = new HashSet<post>();
+        }
+    
         public int t_id { get; set; }
         public int a_id { get; set; }
+        public int u_id { get; set; }
         public string topic { get; set; }
         public string active { get; set; }
         public string title { get; set; }
@@ -25,5 +33,11 @@ namespace wb.Models
         public System.DateTime created { get; set; }
         public string identifier { get; set; }
         public int attributes { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<active_threads> active_threads { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<post> posts { get; set; }
+        public virtual user user { get; set; }
     }
 }

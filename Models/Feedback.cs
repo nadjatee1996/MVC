@@ -15,12 +15,14 @@ namespace wb.Models
     public partial class feedback
     {
         public int f_id { get; set; }
-        public string u_id { get; set; }
+        public int u_id { get; set; }
         public string sentIP { get; set; }
         public string content { get; set; }
         public System.DateTime time_sent { get; set; }
         public int admin_id { get; set; }
         public Nullable<int> reply_id { get; set; }
         public int read { get; set; }
+    
+        public virtual user user { get; set; }
     }
 }

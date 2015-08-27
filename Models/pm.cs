@@ -20,5 +20,8 @@ namespace wb.Models
         public System.DateTime time_sent { get; set; }
         public string content { get; set; }
         public int read { get; set; }
+    
+        public virtual user user { get; set; }
+        public virtual user user1 { get; set; }
     }
 }

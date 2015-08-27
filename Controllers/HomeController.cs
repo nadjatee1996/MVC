@@ -10,8 +10,7 @@ namespace wb.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
-        private wbDBEntities1 db = new wbDBEntities1();
+        // GET: Home        
         public ActionResult Index()
         {
             return View();
@@ -23,13 +22,12 @@ namespace wb.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register([Bind(Include = "pseudonym,password,email")] user user)
+        public ActionResult Register([Bind(Include = "pseudonym,password,passwordConfirm,agree")] register register)
         {
             string errorString = "<div id='regError'>";
             string userName = Request["pseudonym"];
-            string password = Request["password"];
+            string pword = Request["password"];
             string passwordConfirm = Request["passwordConfirm"];
-            string email = Request["email"];
             string agree = Request["agree"];
             bool confirm = true;
             if (userName.Length == 0)
@@ -52,17 +50,17 @@ namespace wb.Controllers
                 errorString += "<span>Your pseudonym has one or more invalid character(s).</span>";
                 confirm = false;
             }
-            if (password != passwordConfirm)
+            if (pword != passwordConfirm)
             {
                 errorString += "</br><span>Your passwords don't match.</span>";
                 confirm = false;
             }
-            if (password.Length == 0)
+            if (pword.Length == 0)
             {
                 errorString += "</br><span>You did not enter a password.</span>";
                 confirm = false;
             }
-            else if (password.Length <= 3)
+            else if (pword.Length <= 3)
             {
                 errorString += "</br><span>Your password is too short.</span>";
                 confirm = false;
@@ -72,13 +70,22 @@ namespace wb.Controllers
                 errorString += "</br><span>Please agree to our <a href='terms'>Terms and Agreements</a> to register.</span>";
                 confirm = false;
             }
-            errorString += " " + password + "/";
             errorString += "</div>";
             ViewBag.Errors = errorString;
+
             if ((ModelState.IsValid) && (confirm == true))
             {
-                db.users.Add(user);
-                db.SaveChanges();
+
+                using (var context = new wbEntities())
+                {
+                    user user = new user();
+                    user.pseudonym = userName;
+                    user.password = pword;
+                    context.users.Add(user);
+                    context.SaveChanges();
+                }
+
+
                 return RedirectToAction("Index");
             }  
             return View("Register");

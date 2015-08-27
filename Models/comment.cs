@@ -16,10 +16,12 @@ namespace wb.Models
     {
         public int c_id { get; set; }
         public int p_id { get; set; }
-        public string pseudonym { get; set; }
+        public int u_id { get; set; }
         public string comment1 { get; set; }
         public int approve { get; set; }
         public int disapprove { get; set; }
         public System.DateTime created { get; set; }
+    
+        public virtual post post { get; set; }
     }
 }

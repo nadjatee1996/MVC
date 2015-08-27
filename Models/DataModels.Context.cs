@@ -13,10 +13,10 @@ namespace wb.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class wbDBEntities1 : DbContext
+    public partial class wbEntities : DbContext
     {
-        public wbDBEntities1()
-            : base("name=wbDBEntities1")
+        public wbEntities()
+            : base("name=wbEntities")
         {
         }
     

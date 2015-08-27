@@ -14,6 +14,12 @@ namespace wb.Models
     
     public partial class post
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public post()
+        {
+            this.comments = new HashSet<comment>();
+        }
+    
         public int p_id { get; set; }
         public int t_id { get; set; }
         public int u_id { get; set; }
@@ -22,5 +28,10 @@ namespace wb.Models
         public int approve { get; set; }
         public int disapprove { get; set; }
         public System.DateTime created { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<comment> comments { get; set; }
+        public virtual user user { get; set; }
+        public virtual thread thread1 { get; set; }
     }
 }

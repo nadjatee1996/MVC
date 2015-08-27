@@ -176,6 +176,7 @@
     <Compile Include="Models\post.cs">
       <DependentUpon>DataModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\register.cs" />
     <Compile Include="Models\report.cs">
       <DependentUpon>DataModels.tt</DependentUpon>
     </Compile>

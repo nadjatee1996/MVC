@@ -17,5 +17,7 @@ namespace wb.Models
         public int a_id { get; set; }
         public string topic { get; set; }
         public int t_id { get; set; }
+    
+        public virtual thread thread { get; set; }
     }
 }
