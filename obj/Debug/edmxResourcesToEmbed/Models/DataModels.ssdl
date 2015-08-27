@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="wbDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="active_threads">
+    <Key>
+      <PropertyRef Name="a_id" />
+    </Key>
+    <Property Name="a_id" Type="int" Nullable="false" />
+    <Property Name="topic" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="t_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="comments">
+    <Key>
+      <PropertyRef Name="c_id" />
+    </Key>
+    <Property Name="c_id" Type="int" Nullable="false" />
+    <Property Name="p_id" Type="int" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="comment" Type="text" Nullable="false" />
+    <Property Name="approve" Type="int" Nullable="false" />
+    <Property Name="disapprove" Type="int" Nullable="false" />
+    <Property Name="created" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="errors">
+    <Key>
+      <PropertyRef Name="e_id" />
+    </Key>
+    <Property Name="e_id" Type="int" Nullable="false" />
+    <Property Name="error" Type="text" Nullable="false" />
+    <Property Name="time" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="feedback">
+    <Key>
+      <PropertyRef Name="f_id" />
+    </Key>
+    <Property Name="f_id" Type="int" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="sentIP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="content" Type="text" Nullable="false" />
+    <Property Name="time_sent" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="admin_id" Type="int" Nullable="false" />
+    <Property Name="reply_id" Type="int" />
+    <Property Name="read" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="journal">
+    <Key>
+      <PropertyRef Name="j_id" />
+    </Key>
+    <Property Name="j_id" Type="int" Nullable="false" />
+    <Property Name="post" Type="text" Nullable="false" />
+    <Property Name="created" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pms">
+    <Key>
+      <PropertyRef Name="pm_id" />
+    </Key>
+    <Property Name="pm_id" Type="int" Nullable="false" />
+    <Property Name="sent_u_id" Type="int" Nullable="false" />
+    <Property Name="recieve_u_id" Type="int" Nullable="false" />
+    <Property Name="time_sent" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="content" Type="text" Nullable="false" />
+    <Property Name="read" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="posts">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" Nullable="false" />
+    <Property Name="t_id" Type="int" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="thread" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="post" Type="text" Nullable="false" />
+    <Property Name="approve" Type="int" Nullable="false" />
+    <Property Name="disapprove" Type="int" Nullable="false" />
+    <Property Name="created" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="reports">
+    <Key>
+      <PropertyRef Name="f_id" />
+    </Key>
+    <Property Name="f_id" Type="int" Nullable="false" />
+    <Property Name="u_id_reported" Type="int" Nullable="false" />
+    <Property Name="u_id_reportedby" Type="int" Nullable="false" />
+    <Property Name="type" Type="text" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="content" Type="text" Nullable="false" />
+    <Property Name="time_sent" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="mod_id" Type="int" Nullable="false" />
+    <Property Name="reply_id" Type="int" Nullable="false" />
+    <Property Name="read" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="threads">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="int" Nullable="false" />
+    <Property Name="a_id" Type="int" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="topic" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="active" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="title" Type="text" Nullable="false" />
+    <Property Name="description" Type="text" Nullable="false" />
+    <Property Name="approve" Type="int" Nullable="false" />
+    <Property Name="disapprove" Type="int" Nullable="false" />
+    <Property Name="created" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="identifier" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="attributes" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="u_id" />
+    </Key>
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="regIP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="loginIP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pseudonym" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="userlvl" Type="int" Nullable="false" />
+    <Property Name="posts" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_active_threads_ToTable">
+    <End Role="threads" Type="Self.threads" Multiplicity="1" />
+    <End Role="active_threads" Type="Self.active_threads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="threads">
+        <PropertyRef Name="t_id" />
+      </Principal>
+      <Dependent Role="active_threads">
+        <PropertyRef Name="t_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_comments_ToTable">
+    <End Role="posts" Type="Self.posts" Multiplicity="1" />
+    <End Role="comments" Type="Self.comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="posts">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="comments">
+        <PropertyRef Name="p_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_feedback_ToTable">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="feedback" Type="Self.feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="u_id" />
+      </Principal>
+      <Dependent Role="feedback">
+        <PropertyRef Name="u_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pms_ToTable">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="pms" Type="Self.pms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="u_id" />
+      </Principal>
+      <Dependent Role="pms">
+        <PropertyRef Name="sent_u_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pms_ToTable_1">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="pms" Type="Self.pms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="u_id" />
+      </Principal>
+      <Dependent Role="pms">
+        <PropertyRef Name="recieve_u_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_posts_ToTable">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="posts" Type="Self.posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="u_id" />
+      </Principal>
+      <Dependent Role="posts">
+        <PropertyRef Name="u_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_posts_ToTable_1">
+    <End Role="threads" Type="Self.threads" Multiplicity="1" />
+    <End Role="posts" Type="Self.posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="threads">
+        <PropertyRef Name="t_id" />
+      </Principal>
+      <Dependent Role="posts">
+        <PropertyRef Name="t_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reports_ToTable">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="reports" Type="Self.reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="u_id" />
+      </Principal>
+      <Dependent Role="reports">
+        <PropertyRef Name="u_id_reported" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reports_ToTable_1">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="reports" Type="Self.reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="u_id" />
+      </Principal>
+      <Dependent Role="reports">
+        <PropertyRef Name="u_id_reportedby" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_threads_ToTable_1">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="threads" Type="Self.threads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="u_id" />
+      </Principal>
+      <Dependent Role="threads">
+        <PropertyRef Name="u_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="wbDBModelStoreContainer">
+    <EntitySet Name="active_threads" EntityType="Self.active_threads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="comments" EntityType="Self.comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="errors" EntityType="Self.errors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="feedback" EntityType="Self.feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="journal" EntityType="Self.journal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pms" EntityType="Self.pms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="posts" EntityType="Self.posts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="reports" EntityType="Self.reports" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="threads" EntityType="Self.threads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_active_threads_ToTable" Association="Self.FK_active_threads_ToTable">
+      <End Role="threads" EntitySet="threads" />
+      <End Role="active_threads" EntitySet="active_threads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_comments_ToTable" Association="Self.FK_comments_ToTable">
+      <End Role="posts" EntitySet="posts" />
+      <End Role="comments" EntitySet="comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_feedback_ToTable" Association="Self.FK_feedback_ToTable">
+      <End Role="users" EntitySet="users" />
+      <End Role="feedback" EntitySet="feedback" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pms_ToTable" Association="Self.FK_pms_ToTable">
+      <End Role="users" EntitySet="users" />
+      <End Role="pms" EntitySet="pms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pms_ToTable_1" Association="Self.FK_pms_ToTable_1">
+      <End Role="users" EntitySet="users" />
+      <End Role="pms" EntitySet="pms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_posts_ToTable" Association="Self.FK_posts_ToTable">
+      <End Role="users" EntitySet="users" />
+      <End Role="posts" EntitySet="posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_posts_ToTable_1" Association="Self.FK_posts_ToTable_1">
+      <End Role="threads" EntitySet="threads" />
+      <End Role="posts" EntitySet="posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reports_ToTable" Association="Self.FK_reports_ToTable">
+      <End Role="users" EntitySet="users" />
+      <End Role="reports" EntitySet="reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reports_ToTable_1" Association="Self.FK_reports_ToTable_1">
+      <End Role="users" EntitySet="users" />
+      <End Role="reports" EntitySet="reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_threads_ToTable_1" Association="Self.FK_threads_ToTable_1">
+      <End Role="users" EntitySet="users" />
+      <End Role="threads" EntitySet="threads" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

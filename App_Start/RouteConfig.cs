@@ -33,7 +33,13 @@ namespace wb
                 url: "login",
                 defaults: new { controller = "home", action = "Login" }
             );
-            
+
+            routes.MapRoute(
+                name: "create",
+                url: "users/{action}",
+                defaults: new { controller = "users", action = "create" }
+            );
+
             routes.MapRoute(
                 name: "topics",
                 url: "{id}",

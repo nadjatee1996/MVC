@@ -102,25 +102,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\DataModels.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModels.edmx</DependentUpon>
-      <LastGenOutput>DataModels.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\DataModels.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModels.edmx</DependentUpon>
-      <LastGenOutput>DataModels.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\DataModels.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataModels.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DataModels.edmx.diagram">
-      <DependentUpon>DataModels.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -136,56 +119,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TopicController.cs" />
-    <Compile Include="Controllers\usersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\active_threads.cs">
-      <DependentUpon>DataModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\comment.cs">
-      <DependentUpon>DataModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModels.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModels.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModels.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModels.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModels.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\error.cs">
-      <DependentUpon>DataModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\feedback.cs">
-      <DependentUpon>DataModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\journal.cs">
-      <DependentUpon>DataModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\pm.cs">
-      <DependentUpon>DataModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\post.cs">
-      <DependentUpon>DataModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\register.cs" />
-    <Compile Include="Models\report.cs">
-      <DependentUpon>DataModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\thread.cs">
-      <DependentUpon>DataModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\user.cs">
-      <DependentUpon>DataModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -202,11 +139,6 @@
     <Content Include="Views\Thread\Index.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\users\Create.cshtml" />
-    <Content Include="Views\users\Delete.cshtml" />
-    <Content Include="Views\users\Details.cshtml" />
-    <Content Include="Views\users\Edit.cshtml" />
-    <Content Include="Views\users\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
