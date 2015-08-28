@@ -13,6 +13,8 @@ D:\MVC\wb\wb\bin\roslyn\VBCSCompiler.exe.config
 D:\MVC\wb\wb\bin\wb.dll.config
 D:\MVC\wb\wb\bin\wb.dll
 D:\MVC\wb\wb\bin\wb.pdb
+D:\MVC\wb\wb\bin\EntityFramework.dll
+D:\MVC\wb\wb\bin\EntityFramework.SqlServer.dll
 D:\MVC\wb\wb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\MVC\wb\wb\bin\Microsoft.Web.Infrastructure.dll
 D:\MVC\wb\wb\bin\System.Web.Helpers.dll
@@ -21,6 +23,8 @@ D:\MVC\wb\wb\bin\System.Web.Razor.dll
 D:\MVC\wb\wb\bin\System.Web.Webpages.Deployment.dll
 D:\MVC\wb\wb\bin\System.Web.Webpages.dll
 D:\MVC\wb\wb\bin\System.Web.Webpages.Razor.dll
+D:\MVC\wb\wb\bin\EntityFramework.xml
+D:\MVC\wb\wb\bin\EntityFramework.SqlServer.xml
 D:\MVC\wb\wb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\MVC\wb\wb\bin\System.Web.Razor.xml
 D:\MVC\wb\wb\bin\System.Web.Webpages.xml
@@ -28,10 +32,5 @@ D:\MVC\wb\wb\bin\System.Web.Webpages.Deployment.xml
 D:\MVC\wb\wb\bin\System.Web.Webpages.Razor.xml
 D:\MVC\wb\wb\bin\System.Web.Helpers.xml
 D:\MVC\wb\wb\bin\System.Web.Mvc.xml
-D:\MVC\wb\wb\obj\Debug\wb.csprojResolveAssemblyReference.cache
 D:\MVC\wb\wb\obj\Debug\wb.dll
 D:\MVC\wb\wb\obj\Debug\wb.pdb
-D:\MVC\wb\wb\bin\EntityFramework.dll
-D:\MVC\wb\wb\bin\EntityFramework.SqlServer.dll
-D:\MVC\wb\wb\bin\EntityFramework.xml
-D:\MVC\wb\wb\bin\EntityFramework.SqlServer.xml

@@ -24,7 +24,7 @@ namespace wb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register([Bind(Include = "pseudonym,password,passwordConfirm,agree")] register register)
         {
-            string errorString = "<div id='regError'>";
+           /* string errorString = "<div id='regError'>";
             string userName = Request["pseudonym"];
             string pword = Request["password"];
             string passwordConfirm = Request["passwordConfirm"];
@@ -76,7 +76,7 @@ namespace wb.Controllers
             if ((ModelState.IsValid) && (confirm == true))
             {
 
-                using (var context = new wbEntities())
+                using (var context = new wbEnt())
                 {
                     user user = new user();
                     user.pseudonym = userName;
@@ -87,7 +87,7 @@ namespace wb.Controllers
 
 
                 return RedirectToAction("Index");
-            }  
+            }  */
             return View("Register");
         }
 
