@@ -14,9 +14,9 @@
         @using (Html.BeginForm("Register", "Home", FormMethod.Post))
         {
             @Html.AntiForgeryToken()
-            <span>Pseudonym: </span><div style="font-size: 12px">This is your pen name.(Alphanumeric characters only)</div>@Html.TextBoxFor(model => model.pseudonym, new {name = "pseudonym" })<br>
-            <span>Password: </span><div style="font-size: 12px">This is your password to log in.</div>@Html.PasswordFor(model => model.password, new { id = "password" })<br>
-            <span>Confirm Password: </span><div style="font-size: 12px">Please re-enter your password.</div>@Html.PasswordFor(model => model.passwordConfirm, new { id = "passwordConfirm" })<br>
+            <span>Pseudonym: </span><div style="font-size: 12px">This is your pen name.(Alphanumeric characters only)</div>@Html.TextBoxFor(model => model.pseudonym)<br>
+            <span>Password: </span><div style="font-size: 12px">This is your password to log in.</div>@Html.PasswordFor(model => model.password)<br>
+            <span>Confirm Password: </span><div style="font-size: 12px">Please re-enter your password.</div>@Html.PasswordFor(model => model.passwordConfirm)<br>
             <div>@Html.CheckBoxFor(model => model.agree, new { name = "agree" })I agree to <a href="/terms">terms and agreements</a></div>
             <input type="submit" value="Register" />
         }
