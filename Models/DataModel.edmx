@@ -121,6 +121,7 @@
           <Property Name="password" Type="varchar" MaxLength="35" Nullable="false" />
           <Property Name="userlvl" Type="int" Nullable="false" />
           <Property Name="posts" Type="int" Nullable="false" />
+          <Property Name="key" Type="varchar" MaxLength="35" Nullable="false" />
         </EntityType>
         <Association Name="FK_active_threads_ToTable">
           <End Role="threads" Type="Self.threads" Multiplicity="1" />
@@ -428,6 +429,7 @@
           <Property Name="password" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="userlvl" Type="Int32" Nullable="false" />
           <Property Name="posts" Type="Int32" Nullable="false" />
+          <Property Name="key" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="feedbacks" Relationship="Self.FK_feedback_ToTable" FromRole="users" ToRole="feedback" />
           <NavigationProperty Name="pms" Relationship="Self.FK_pms_ToTable" FromRole="users" ToRole="pms" />
           <NavigationProperty Name="pms1" Relationship="Self.FK_pms_ToTable_1" FromRole="users" ToRole="pms" />
@@ -738,6 +740,7 @@
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="userlvl" ColumnName="userlvl" />
                 <ScalarProperty Name="posts" ColumnName="posts" />
+                <ScalarProperty Name="key" ColumnName="key" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

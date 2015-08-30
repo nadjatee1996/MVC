@@ -5,7 +5,6 @@ using System.Text;
 using System.Web.Mvc;
 using wb.Models;
 using System.Text.RegularExpressions;
-using System.Security.Cryptography;
 
 namespace wb.Controllers
 {
@@ -34,7 +33,13 @@ namespace wb.Controllers
             string passwordConfirm = Request["passwordConfirm"];
             string agree = Request["agree"];
             bool confirm = true;
-            if(db.users.Any(p => p.pseudonym == userName))
+            Regex r = new Regex("^[a-zA-Z_]*$");
+            if(!r.IsMatch(userName))
+            {
+                errorString += "<span>Your psuedonym has invalid characters.</span>";
+                confirm = false;
+            }
+            if (db.users.Any(p => p.pseudonym == userName))
             {
                 errorString += "<span>Your psuedonym is already taken. Please choose another.</span>";
                 confirm = false;
@@ -89,17 +94,16 @@ namespace wb.Controllers
                 {
                     user user = new user();
                     user.pseudonym = userName;
-                    user.password = hashMD5(pword);
+                    user.password = DataSec.hashMD5(pword);
                     user.regIP = "unknown";
                     user.loginIP = "unknown";
-                    if(System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"] != "")
+                    if (System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"] != "")
                     {
                         user.regIP = System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]; ;
                         user.loginIP = System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]; ;
                     }
                     db.users.Add(user);
-                    db.SaveChanges();
-                    
+                    db.SaveChanges();                    
                 }
 
 
@@ -119,21 +123,29 @@ namespace wb.Controllers
             return View("Contact");
         }
         [HttpPost]
-        public ActionResult Login(string username,string password, bool remember)
+        [ValidateAntiForgeryToken]
+        public ActionResult Login([Bind(Include = "pseudonym,password,remember")] register register)
         {
-            username = Request["pseudonym"];
-            password = Request["password"];
-            System.Diagnostics.Debug.WriteLine(username + " " + password);
+            string userName = Request["pseudonym"];
+            string password = Request["password"];
+            string remember = Request["remember"];
+
+            using (wbEntities context = new wbEntities())
+            {
+                var query = from user in db.users where 
+                            user.pseudonym == userName
+                            select user;
+                foreach (var result in query)
+                {
+                    if(DataSec.hashMD5(password) == result.password)
+                    {
+                        Response.Cookies["session_id"].Value = DataSec.secure(userName);
+                    }
+                }
+
+            }
+
             return View("Index");
-        }
-
-        string hashMD5(string toHash)
-        {
-            MD5 md5 = new MD5CryptoServiceProvider();
-            Byte[] originalBytes = ASCIIEncoding.Default.GetBytes(toHash);
-            Byte[] encodedBytes = md5.ComputeHash(originalBytes);
-
-            return BitConverter.ToString(encodedBytes).Replace("-","");
         }
     }
 }

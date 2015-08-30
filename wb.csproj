@@ -135,6 +135,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\DataSec.cs" />
     <Compile Include="Controllers\TopicController.cs" />
     <Compile Include="Controllers\usersController.cs" />
     <Compile Include="Global.asax.cs">

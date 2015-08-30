@@ -33,6 +33,7 @@ namespace wb.Models
         public string password { get; set; }
         public int userlvl { get; set; }
         public int posts { get; set; }
+        public string key { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<feedback> feedbacks { get; set; }

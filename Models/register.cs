@@ -11,5 +11,6 @@ namespace wb.Models
         public string password { get; set; }
         public string passwordConfirm { get; set; }
         public bool agree { get; set; }
+        public bool remember { get; set; }
     }
 }

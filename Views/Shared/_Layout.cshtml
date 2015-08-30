@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Writer's Block</title>
-    <link href="~/Content/Site.css" rel="stylesheet"/>
+    <link href="~/Content/Site.css" rel="stylesheet" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
@@ -13,15 +13,16 @@
     <!--Header and login-->
     <div id='background'>
         <div id='loginTop'>
-        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
-        {
-            <span id="loginText">Pseudonym: </span>@Html.TextBoxFor(model => model.pseudonym, new { id = "loginText" })
-            <span id="loginText">Password: </span>@Html.TextBoxFor(model => model.password, new { id = "loginText" })
-            <input type='Submit' name='loginSubmit' value='Login' id='loginSub'>
-            <span id="loginText"><a href='/register'>Register</a></span>
+            @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <span id="loginText">Pseudonym: </span>@Html.TextBoxFor(model => model.pseudonym, new { id = "loginText" })
+                <span id="loginText">Password: </span>@Html.PasswordFor(model => model.password, new { id = "loginText" })
+                <input type='Submit' name='loginSubmit' value='Login' id='loginSub'>
+                <span id="loginText"><a href='/register'>Register</a></span>
                 <div id='loginRem'><input type='checkbox' name='loginRem' value='true'>Remember me</div>
-                }
-</div>
+            }
+        </div>
         <div id='top'>
             @{ string[] topics = new string[] { "Fantasy", "Fan-fiction", "Mystery", "Thriller", "Horror", "Drama", "Romance", "Poetry", "Short Stories", "Constrained Writing", "Art-Related" }; }
             @{ string[] links = new string[] { "fantasy", "fan-fiction", "mystery", "thriller", "horror", "drama", "romance", "poetry", "short-stories", "constrained-writing", "art-related" }; }
@@ -44,7 +45,7 @@
         @{ string[] list = new string[] { "Contact Us", "About", "Site Rules", "FAQ", "Dev Blog", "Terms and Agreements" }; }
         @{ string[] footerLinks = new string[] { "contact", "about", "rules", "faq", "blog", "terms" }; }
         @for (int x = 0; x < list.Length; x++)
-        { 
+        {
             <a id='bottomLinks' href='@footerLinks[x]'>@list[x]</a>
         }
     </div>
