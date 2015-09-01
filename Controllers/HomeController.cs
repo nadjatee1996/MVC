@@ -5,6 +5,7 @@ using System.Text;
 using System.Web.Mvc;
 using wb.Models;
 using System.Text.RegularExpressions;
+using System.Data.Entity;
 
 namespace wb.Controllers
 {
@@ -97,13 +98,14 @@ namespace wb.Controllers
                     user.password = DataSec.hashMD5(pword);
                     user.regIP = "unknown";
                     user.loginIP = "unknown";
+                    user.key = "default";
                     if (System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"] != "")
                     {
                         user.regIP = System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]; ;
                         user.loginIP = System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]; ;
                     }
                     db.users.Add(user);
-                    db.SaveChanges();                    
+                    db.SaveChanges();                        
                 }
 
 
@@ -130,19 +132,20 @@ namespace wb.Controllers
             string password = Request["password"];
             string remember = Request["remember"];
 
-            using (wbEntities context = new wbEntities())
+            user result = (from user in db.users where 
+                        user.pseudonym == userName
+                        select user).First();
+            if(DataSec.hashMD5(password) == result.password)
             {
-                var query = from user in db.users where 
-                            user.pseudonym == userName
-                            select user;
-                foreach (var result in query)
+                string cookieData = DataSec.secure(userName);
+                Response.Cookies["session_id"].Value = cookieData;
+                if(remember != "false")
                 {
-                    if(DataSec.hashMD5(password) == result.password)
-                    {
-                        Response.Cookies["session_id"].Value = DataSec.secure(userName);
-                    }
+                    Response.Cookies["session_id"].Expires = DateTime.Now.AddMonths(1);
                 }
-
+                result.key = cookieData;
+                db.Entry(result).State = EntityState.Modified;
+                db.SaveChanges();
             }
 
             return View("Index");
