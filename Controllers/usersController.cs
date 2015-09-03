@@ -94,7 +94,7 @@ namespace wb.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                //return new HttpStatusCodResult(HttpStatusCode.BadRequest);
             }
             user user = db.users.Find(id);
             if (user == null)

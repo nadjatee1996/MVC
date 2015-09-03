@@ -25,6 +25,7 @@ namespace wb.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
         public virtual DbSet<active_threads> active_threads { get; set; }
         public virtual DbSet<comment> comments { get; set; }
         public virtual DbSet<error> errors { get; set; }

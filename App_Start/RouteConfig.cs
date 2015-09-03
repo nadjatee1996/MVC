@@ -16,17 +16,17 @@ namespace wb
             routes.MapRoute(
                 name: "Default",
                 url: "",
-                defaults: new { controller = "home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "home", action = "Index"}
             );
             routes.MapRoute(
                 name: "register",
                 url: "register",
-                defaults: new { controller = "home", action = "Register" }
+                defaults: new { controller = "register", action = "Index" }
             );
             routes.MapRoute(
                 name: "contact",
                 url: "contact",
-                defaults: new { controller = "home", action = "Contact" }
+                defaults: new { controller = "contact", action = "Index" }
             );
             routes.MapRoute(
                 name: "login",
